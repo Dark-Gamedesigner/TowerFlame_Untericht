@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    //ToDo Gegner erkennen
-    //ToDo zum Gegner Drehen
-    //ToDo Schießen (Projektil Spawnen)
     //ToDo Priority
     //ToDo wert wie Stärke, Schussrate; Reichweite etc.
 
@@ -23,24 +20,28 @@ public class Tower : MonoBehaviour
 
     // Update is called once per frame
     void Update(){
-       var ColliderInRange = Physics.OverlapSphere(transform.position, Range);
-       Enemy target;
-       foreach (var collider in ColliderInRange){
-           Enemy componentOfTarget = collider.GetComponent<Enemy>();
-           if (componentOfTarget != null){
-               target = componentOfTarget;
-               Shoot(target);
-               break;
-           }
-       }
+        _attackCoolDown -= Time.deltaTime;
+        if (_attackCoolDown <= 0){
+            var ColliderInRange = Physics.OverlapSphere(transform.position, Range);
+            Enemy target;
+            foreach (var collider in ColliderInRange){
+                Enemy componentOfTarget = collider.GetComponent<Enemy>();
+                if (componentOfTarget != null){
+                    target = componentOfTarget;
+                    transform.LookAt(target.transform.position, Vector3.up);
+                    Shoot(target);
+                    break;
+                }
+            }
+        }
     }
 
     private void Shoot(Enemy target){
         var newProjectile = Instantiate(Projectil, transform.position, Quaternion.identity);
+        var projectilePosition = newProjectile.transform.position;
+        projectilePosition.y = target.transform.position.y;
+        newProjectile.transform.position = projectilePosition;
         newProjectile.transform.LookAt(target.transform.position);
-        Rigidbody projectilesRB = newProjectile.GetComponent<Rigidbody>();
-        if (projectilesRB != null){
-            projectilesRB.linearVelocity = newProjectile.transform.forward * 5;
-        }
+        _attackCoolDown = 1 / Mathf.Max(FireRate, 0.001f);
     }
 }

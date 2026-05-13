@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour{
     public EnemyPathControll Target;
-
+    
+    public float DistanceTravelled{ get; private set; }
     public float Speed;
-
     public float TurnSpeed = 1080;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
