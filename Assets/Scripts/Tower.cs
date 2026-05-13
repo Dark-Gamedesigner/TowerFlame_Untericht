@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Tower : MonoBehaviour
@@ -23,14 +24,21 @@ public class Tower : MonoBehaviour
         _attackCoolDown -= Time.deltaTime;
         if (_attackCoolDown <= 0){
             var ColliderInRange = Physics.OverlapSphere(transform.position, Range);
-            Enemy target;
+            Enemy targetCandidate;
+            // Erstmal suchen wir den nächsten Enemy
+            foreach (var collider in ColliderInRange){
+                if (collider.GetComponent<Enemy>() != null){
+                    targetCandidate = collider.GetComponent<Enemy>();
+                    break;
+                }
+            }
+            
             foreach (var collider in ColliderInRange){
                 Enemy componentOfTarget = collider.GetComponent<Enemy>();
                 if (componentOfTarget != null){
-                    target = componentOfTarget;
-                    transform.LookAt(target.transform.position, Vector3.up);
-                    Shoot(target);
-                    break;
+                    if (componentOfTarget.DistanceTravelled > targetCandidate.DistanceTravelled){
+                        targetCandidate = componentOfTarget;
+                    }
                 }
             }
         }
@@ -43,5 +51,9 @@ public class Tower : MonoBehaviour
         newProjectile.transform.position = projectilePosition;
         newProjectile.transform.LookAt(target.transform.position);
         _attackCoolDown = 1 / Mathf.Max(FireRate, 0.001f);
+    }
+
+    private void OnDrawGizmos(){
+        Gizmos.DrawWireSphere(transform.position.Range);
     }
 }

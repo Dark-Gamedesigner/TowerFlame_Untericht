@@ -28,7 +28,10 @@ public class Enemy : MonoBehaviour{
             float sign = rightDot > 0 ? 1 : -1;
             transform.Rotate(0, sign * TurnSpeed * Time.deltaTime, 0);
         }
-        transform.Translate(Vector3.forward * (Speed * Time.deltaTime));
+
+        float stepThisFrame = (Speed * Time.deltaTime);                                 // Die Distanz, die wir disen Frame laufen werden.
+        DistanceTravelled += stepThisFrame;                                             // Im "Schrittzähler" vermerken
+        transform.Translate(Vector3.forward * (Speed * Time.deltaTime));       // Vorwärts bewegen um diese Distanz 
         if (Vector3.Distance(transform.position, Target.transform.position) <= 0.1f){
             // Wenn wir grob auf dem Ziel sind:
             if (Target.isEnd){
