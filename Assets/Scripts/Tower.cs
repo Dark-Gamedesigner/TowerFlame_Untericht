@@ -36,6 +36,11 @@ public class Tower : MonoBehaviour
     }
 
     private void Shoot(Enemy target){
-        Instantiate(Projectil);
+        var newProjectile = Instantiate(Projectil, transform.position, Quaternion.identity);
+        newProjectile.transform.LookAt(target.transform.position);
+        Rigidbody projectilesRB = newProjectile.GetComponent<Rigidbody>();
+        if (projectilesRB != null){
+            projectilesRB.linearVelocity = newProjectile.transform.forward * 5;
+        }
     }
 }
