@@ -36,6 +36,6 @@ public class Tower : MonoBehaviour
     }
 
     private void Shoot(Enemy target){
-        throw new System.NotImplementedException();
+        Instantiate(Projectil);
     }
 }
