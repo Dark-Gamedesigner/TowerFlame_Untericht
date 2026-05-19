@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerProjectile
   Speed: 5
+  RemainingLifeTime: 1
 --- !u!1001 &8827054880052067548
 PrefabInstance:
   m_ObjectHideFlags: 0
