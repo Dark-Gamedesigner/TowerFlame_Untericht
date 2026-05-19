@@ -24,7 +24,7 @@ public class Tower : MonoBehaviour
         _attackCoolDown -= Time.deltaTime;
         if (_attackCoolDown <= 0){
             var ColliderInRange = Physics.OverlapSphere(transform.position, Range);
-            Enemy targetCandidate;
+            Enemy targetCandidate = null;
             // Erstmal suchen wir den nächsten Enemy
             foreach (var collider in ColliderInRange){
                 if (collider.GetComponent<Enemy>() != null){
@@ -54,6 +54,6 @@ public class Tower : MonoBehaviour
     }
 
     private void OnDrawGizmos(){
-        Gizmos.DrawWireSphere(transform.position.Range);
+        Gizmos.DrawWireSphere(transform.position,Range);
     }
 }
