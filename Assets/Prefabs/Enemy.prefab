@@ -50,6 +50,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   Speed: 3
   TurnSpeed: 1080
+  _health: 150
 --- !u!135 &8935074265779612272
 SphereCollider:
   m_ObjectHideFlags: 0

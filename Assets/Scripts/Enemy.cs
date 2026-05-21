@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour{
     public float DistanceTravelled{ get; private set; }
     public float Speed;
     public float TurnSpeed = 1080;
+    [SerializeField]
     private int _health = 10;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

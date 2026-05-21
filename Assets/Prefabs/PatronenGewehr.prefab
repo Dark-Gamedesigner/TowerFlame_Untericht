@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 3627881663895625725}
   - component: {fileID: 7402421038267627203}
   m_Layer: 0
-  m_Name: Tower
+  m_Name: PatronenGewehr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -277,9 +277,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7150de77d97e14347a6b6ddc93a26fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  Range: 5
-  FireRate: 6
-  Projectil: {fileID: 0}
+  stats: {fileID: 11400000, guid: 67f5765c19f844440a32601583aa0f44, type: 2}
+  _attackCoolDown: 0
 --- !u!1 &7598419493678936200
 GameObject:
   m_ObjectHideFlags: 0

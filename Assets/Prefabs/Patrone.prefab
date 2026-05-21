@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 699743047081444453}
   - component: {fileID: 4258851346852811719}
   m_Layer: 0
-  m_Name: Projektil
+  m_Name: Patrone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
