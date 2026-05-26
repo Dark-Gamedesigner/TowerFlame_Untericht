@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce193d6a478ddd2439957cc9caeaf642, type: 3}
+  m_Name: Canon
+  m_EditorClassIdentifier: Assembly-CSharp::TowerStats
+  FireRate: 4
+  Range: 10
+  Projectile: {fileID: 7009705160250896659, guid: 2dbd1a9369745e144b69f206678c574b, type: 3}

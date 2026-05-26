@@ -77,6 +77,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7150de77d97e14347a6b6ddc93a26fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tower
-  Range: 0
-  FireRate: 0
-  Projectil: {fileID: 0}
+  stats: {fileID: 11400000, guid: a85b8268e89bdc74898308fc51debdc4, type: 2}
+  _attackCoolDown: 2

@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class Bank : MonoBehaviour
 {
@@ -31,5 +33,17 @@ public class Bank : MonoBehaviour
 
     private void OnSpendMoney(int amount){
         Balance -= amount;
+    }
+
+    private void Update(){
+        if (Keyboard.current.ctrlKey.isPressed){
+            if (Keyboard.current.rKey.wasPressedThisFrame){
+                AddMoney.Invoke(100);
+            }
+
+            if (Keyboard.current.pKey.wasPressedThisFrame){
+                SpendMoney.Invoke(100);
+            }
+        }
     }
 }

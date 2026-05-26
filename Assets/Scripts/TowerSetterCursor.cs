@@ -8,6 +8,7 @@ public class TowerSetterCursor : MonoBehaviour
     public int SelectableTowerIndex = 0;
 
     public List<GameObject> PlaceableTower;
+    public List<GameObject> Holograms;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -46,29 +47,35 @@ public class TowerSetterCursor : MonoBehaviour
     }
     void TowerSelection(){
                  if (Keyboard.current.digit1Key.wasPressedThisFrame){
-                     SelectableTowerIndex = 0;
+                    SwapToTower(0);
                  }
                  if (Keyboard.current.digit2Key.wasPressedThisFrame){
-                     SelectableTowerIndex = 1;
+                     SwapToTower(1);
                  }
                  if (Keyboard.current.digit3Key.wasPressedThisFrame){
-                     SelectableTowerIndex = 2;
+                     SwapToTower(2);
                  }
                  if (Keyboard.current.digit4Key.wasPressedThisFrame){
-                     SelectableTowerIndex = 3;
+                     SwapToTower(3);
                  }
                  if (Keyboard.current.digit5Key.wasPressedThisFrame){
-                     SelectableTowerIndex = 4;
+                     SwapToTower(4);
                  }
                  if (Keyboard.current.digit6Key.wasPressedThisFrame){
-                     SelectableTowerIndex = 5;
+                    SwapToTower(5);
                  }
                  if (Keyboard.current.digit7Key.wasPressedThisFrame){
-                     SelectableTowerIndex = 6;
+                    SwapToTower(6);
                  }
                  if (Keyboard.current.digit8Key.wasPressedThisFrame){
-                     SelectableTowerIndex = 7;
+                     SwapToTower(7);
                  }
                  SelectableTowerIndex %= PlaceableTower.Count;
+    }
+
+    private void SwapToTower(int index){
+        Holograms[SelectableTowerIndex].SetActive(false);
+        SelectableTowerIndex = index;
+        Holograms[SelectableTowerIndex].SetActive(true);
     }
 }
