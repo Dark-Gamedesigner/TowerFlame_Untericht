@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Maschinengewehr
   m_EditorClassIdentifier: Assembly-CSharp::TowerStats
   FireRate: 10
-  Range: 4
+  Range: 6
   Projectile: {fileID: 8552377269643432644, guid: 09a27467daa39a04db0c475a2019e4eb, type: 3}

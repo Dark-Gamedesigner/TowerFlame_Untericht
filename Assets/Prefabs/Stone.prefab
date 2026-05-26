@@ -78,5 +78,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerProjectile
   Speed: 5
-  RemainingLifeTime: 0
-  Strength: 2
+  RemainingLifeTime: 10
+  Strength: 8
