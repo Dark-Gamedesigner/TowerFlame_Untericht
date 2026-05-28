@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 
@@ -7,13 +6,11 @@ public class BallanceUIElementController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Bank.AddMoney.AddListener(UpdateBalance);
-        Bank.SpendMoney.AddListener(UpdateBalance);
+       Bank.MoneyChanged.AddListener(UpdateBalance);
+       UpdateBalance(Bank.Instance.Balance);
     }
 
-    void UpdateBalance(int x){
-        var money = Bank.Instance.Balance;
-        var tmp = GetComponent<TextMeshProUGUI>();
-        tmp.text = money.ToString();
+    void UpdateBalance(int newBalance){
+        GetComponent<TextMeshProUGUI>().text = newBalance.ToString();
     }
 }

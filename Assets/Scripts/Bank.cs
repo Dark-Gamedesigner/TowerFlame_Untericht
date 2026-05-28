@@ -7,6 +7,7 @@ public class Bank : MonoBehaviour
 {
     public static UnityEvent<int> AddMoney = new();
     public static UnityEvent<int> SpendMoney = new();
+    public static UnityEvent<int> MoneyChanged = new();
 
     public static Bank Instance{ private set; get; } = null;
 
@@ -29,10 +30,12 @@ public class Bank : MonoBehaviour
 
     private void OnAddMoney(int amount){
         Balance += amount;
+        MoneyChanged.Invoke(Balance);
     }
 
     private void OnSpendMoney(int amount){
         Balance -= amount;
+        MoneyChanged.Invoke(Balance);
     }
 
     private void Update(){
@@ -41,7 +44,7 @@ public class Bank : MonoBehaviour
                 AddMoney.Invoke(100);
             }
 
-            if (Keyboard.current.pKey.wasPressedThisFrame){
+            if (Keyboard.current.shiftKey.wasPressedThisFrame){
                 SpendMoney.Invoke(100);
             }
         }
