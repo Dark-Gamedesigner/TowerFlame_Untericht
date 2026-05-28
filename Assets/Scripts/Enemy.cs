@@ -4,9 +4,9 @@ public class Enemy : MonoBehaviour{
     public EnemyPathControll Target;
     
     public float DistanceTravelled{ get; private set; }
-    public float Speed;
+    public EnemyStats Stats; 
     public float TurnSpeed = 1080;
-    [SerializeField] private int _health = 10;
+    [SerializeField] private int _currentHealth = 10;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour{
         if (Target != null){
             transform.LookAt(Target.transform.position);
         }
+
+        _currentHealth = Stats.MaxHP;
     }
 
     // Update is called once per frame
@@ -42,7 +44,7 @@ public class Enemy : MonoBehaviour{
     }
 
     private void MoveForward(){
-        float stepThisFrame = (Speed * Time.deltaTime);                                 // Die Distanz, die wir disen Frame laufen werden.
+        float stepThisFrame = (Stats.Speed * Time.deltaTime);                                 // Die Distanz, die wir disen Frame laufen werden.
         DistanceTravelled += stepThisFrame;                                             // Im "Schrittzähler" vermerken
         transform.Translate(Vector3.forward * stepThisFrame);       // Vorwärts bewegen um diese Distanz 
     }
@@ -65,17 +67,17 @@ public class Enemy : MonoBehaviour{
     }
 
     public void DealDemage(int incomingDemage){
-        int wouldBeHealth = _health - incomingDemage;
+        int wouldBeHealth = _currentHealth - incomingDemage;
         if (wouldBeHealth < 0){
             wouldBeHealth = 0;
         }
 
         if (wouldBeHealth == 0){
             Destroy(gameObject);
-            Bank.AddMoney.Invoke(50);
+            Bank.AddMoney.Invoke(Stats.Kopfgeld);
             return;
         }
 
-        _health = wouldBeHealth;
+        _currentHealth = wouldBeHealth;
     }
 }

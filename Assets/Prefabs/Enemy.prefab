@@ -48,9 +48,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   Target: {fileID: 0}
-  Speed: 1.5
+  Stats: {fileID: 11400000, guid: 79f544650ae234d49b1e0a6b6f05e780, type: 2}
   TurnSpeed: 1080
-  _health: 50
+  _currentHealth: 10
 --- !u!135 &8935074265779612272
 SphereCollider:
   m_ObjectHideFlags: 0
