@@ -50,7 +50,9 @@
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\EnemyPathControll.cs" />
     <Compile Include="Assets\Data\Enemy\EnemyStats.cs" />
+    <Compile Include="Assets\Data\Waves\WaveBatch.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Data\Waves\Wave.cs" />
     <Compile Include="Assets\Scripts\Bank.cs" />
     <Compile Include="Assets\Data\Towers\TowerStats.cs" />
     <Compile Include="Assets\Scripts\BallanceUIElementController.cs" />

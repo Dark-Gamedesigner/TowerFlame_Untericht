@@ -8,6 +8,8 @@ public class EnemySpawner : MonoBehaviour{
     private float _nextSpawnTime;
 
     public EnemyPathControll FirstNode;
+
+    public List<Wave> Wave;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start(){
         _nextSpawnTime = Time.time;
@@ -17,9 +19,9 @@ public class EnemySpawner : MonoBehaviour{
     void Update()
     {
         if (_nextSpawnTime <= Time.time){           // Wenn der nächste Spawn-Zeitpunkt vergangen ist:
-            _nextSpawnTime = Time.time + 2f;
+            _nextSpawnTime = Time.time + Wave[0].Batches[0].delayPerEnemy;
             
-            var newSpawn = Instantiate(SpawnableEnemy[_randomEnemyIndex()], transform.position, Quaternion.identity);
+            var newSpawn = Instantiate(Wave[0].Batches[0].EnemyType, transform.position, Quaternion.identity);
             newSpawn.GetComponent<Enemy>().Target = FirstNode;
         }
     }
