@@ -26,8 +26,12 @@ public class Wave : ScriptableObject
         else{
             Batches[0] = waveBatch; // Kopie ersetzt die erste Batch
         }
-        else if (_currentWave <= 0){
+       /* else if (_currentWave <= 0){
             
-        }
+        }*/
+    }
+
+    public bool IsEmpty(){
+        return Batches.Count <= 0;
     }
 }

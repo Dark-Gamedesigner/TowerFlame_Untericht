@@ -894,6 +894,9 @@
     <Reference Include="Unity.RenderPipelines.Core.Editor">
       <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.UI.Analytics">
       <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\ScriptAssemblies\UnityEditor.UI.Analytics.dll</HintPath>
     </Reference>

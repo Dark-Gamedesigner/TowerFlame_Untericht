@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class EnemySpawner : MonoBehaviour{
@@ -8,7 +9,9 @@ public class EnemySpawner : MonoBehaviour{
     public EnemyPathControll FirstNode;
     public List<Wave> Wave;
     private bool _waveIsRunning = false;
-    public int WaveCount;
+    public int CurrentWave{ get; private set; } = 0;
+    public static UnityEvent<int> Wavestarted = new ();
+    public static UnityEvent<int> WaveFinisched = new();
     
     // TODO ADD WaveCounter
     // TODO Set _waveIsRunning false, sobald die Wave zu ende ist
@@ -34,11 +37,22 @@ public class EnemySpawner : MonoBehaviour{
             
             var newSpawn = Instantiate(Wave[0].Batches[0].EnemyType, transform.position, Quaternion.identity);
             newSpawn.GetComponent<Enemy>().Target = FirstNode;*/
-           if (_nextSpawnTime < Time.time){
+           if (_nextSpawnTime < Time.time && !Wave[0].IsEmpty()){
                var newestEnemy = Instantiate(Wave[0].GetTopMostEnemy(), transform.position, Quaternion.identity);
                _nextSpawnTime += Wave[0].GetTopMostDelay();
                Wave[0].Pop();
                newestEnemy.GetComponent<Enemy>().Target = FirstNode;
+           }
+           else{
+               if (Wave[0].IsEmpty()){
+                   var anyEnemy = GameObject.FindAnyObjectByType<Enemy>();
+                   if (anyEnemy == null){
+                       _waveIsRunning = false;
+                       Bank.AddMoney.Invoke(Wave[0].Reward);
+                       Wave.RemoveAt(0);
+                       WaveFinisched.Invoke(CurrentWave);
+                   }
+               }
            }
         }
     }

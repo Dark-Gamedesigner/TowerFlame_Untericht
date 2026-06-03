@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class TowerSetterCursor : MonoBehaviour
 
 {
+    private static readonly int hologramShaderProperty_Blocked = Shader.PropertyToID("_Blocked");
     public int SelectableTowerIndex = 0;
 
     public List<GameObject> PlaceableTower;
@@ -32,6 +33,7 @@ public class TowerSetterCursor : MonoBehaviour
                 AttampedPlacingTower(objectHit);
             }
         }
+        _shaderUpdate();
     }
 
     private void AttampedPlacingTower(Transform objectHit){
@@ -97,5 +99,29 @@ public class TowerSetterCursor : MonoBehaviour
             return false;
         }
         */
+    }
+
+    private void _shaderUpdate(){
+        bool enoughMoney = _foundsCheck();
+        bool socketIsFree = false;
+        if (enoughMoney){
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.value);
+            if (Physics.Raycast(ray, out hit, 40, LayerMask.GetMask("Default"))){
+                Transform objectHit = hit.transform;
+                var socket = objectHit.GetComponent<TowerSocket>();
+                if (socket){
+                    if (!socket.HeldTower){
+                        socketIsFree = true;
+                    }
+                }
+            }
+        }
+
+        bool finalBlocked = enoughMoney && socketIsFree;
+        var allMeshRenderers = Holograms[SelectableTowerIndex].GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer meshRenderer in allMeshRenderers){
+            meshRenderer.material.SetFloat(hologramShaderProperty_Blocked, finalBlocked?0:1);
+        }
     }
 }
