@@ -7,6 +7,7 @@ public class TowerProjectile : MonoBehaviour
 
     public float RemainingLifeTime;
     public int Strength = 2;
+    public DemageType demageType = DemageType.Kinematic;
  
     // Update is called once per frame
     void FixedUpdate(){
@@ -16,7 +17,7 @@ public class TowerProjectile : MonoBehaviour
         bool hasHit = Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, distanceThisFrame + Single.Epsilon, LayerMask.GetMask("Enemies"));
         if (hasHit){
             var enemyComponent = hit.collider.GetComponent<Enemy>();
-            enemyComponent?.DealDemage(Strength);                       // Nur, wenn das Objekt nicht null ist, wird diese Funktion aufgerufen.
+            enemyComponent?.DealDemage(Strength, this.demageType);                       // Nur, wenn das Objekt nicht null ist, wird diese Funktion aufgerufen.
             Destroy(gameObject);
             // TODO deal demage to enemy
         }

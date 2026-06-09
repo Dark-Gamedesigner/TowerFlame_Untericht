@@ -66,7 +66,7 @@ public class Enemy : MonoBehaviour{
         return rightDot;
     }
 
-    public void DealDemage(int incomingDemage){
+    public void DealDemage(int incomingDemage, DemageType demageType){
         int wouldBeHealth = _currentHealth - incomingDemage;
         if (wouldBeHealth < 0){
             wouldBeHealth = 0;

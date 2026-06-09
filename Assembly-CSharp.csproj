@@ -54,12 +54,14 @@
     <Compile Include="Assets\Data\Waves\WaveBatch.cs" />
     <Compile Include="Assets\Scripts\SpeedToggle.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\SceneSwitcher.cs" />
     <Compile Include="Assets\Data\Waves\Wave.cs" />
     <Compile Include="Assets\Scripts\Bank.cs" />
     <Compile Include="Assets\Data\Towers\TowerStats.cs" />
     <Compile Include="Assets\Scripts\BallanceUIElementController.cs" />
     <Compile Include="Assets\Scripts\Tower.cs" />
     <Compile Include="Assets\Scripts\TowerSocket.cs" />
+    <Compile Include="Assets\Scripts\Enums.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\TowerSetterCursor.cs" />
     <Compile Include="Assets\Scripts\TowerProjectile.cs" />
