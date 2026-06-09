@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour{
@@ -6,7 +7,11 @@ public class Enemy : MonoBehaviour{
     public float DistanceTravelled{ get; private set; }
     public EnemyStats Stats; 
     public float TurnSpeed = 1080;
-    [SerializeField] private int _currentHealth = 10;
+    [SerializeField] 
+    private int _currentHealth = 10;
+
+    public List<DemageType> Immunities;
+    
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -67,6 +72,10 @@ public class Enemy : MonoBehaviour{
     }
 
     public void DealDemage(int incomingDemage, DemageType demageType){
+        if (Immunities.Contains(demageType)){
+            Debug.Log("Immun hit!");
+            return;
+        }
         int wouldBeHealth = _currentHealth - incomingDemage;
         if (wouldBeHealth < 0){
             wouldBeHealth = 0;

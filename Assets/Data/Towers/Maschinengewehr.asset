@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce193d6a478ddd2439957cc9caeaf642, type: 3}
   m_Name: Maschinengewehr
   m_EditorClassIdentifier: Assembly-CSharp::TowerStats
-  FireRate: 10
+  FireRate: 15
   Range: 6
+  Spread: 0
   Projectile: {fileID: 8552377269643432644, guid: 09a27467daa39a04db0c475a2019e4eb, type: 3}
+  Price: 150
