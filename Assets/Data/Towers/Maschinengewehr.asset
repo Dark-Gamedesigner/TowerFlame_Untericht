@@ -15,5 +15,5 @@ MonoBehaviour:
   FireRate: 15
   Range: 6
   Spread: 0
-  Projectile: {fileID: 8552377269643432644, guid: 09a27467daa39a04db0c475a2019e4eb, type: 3}
+  Projectile: {fileID: 8552377269643432644, guid: a13258efd00899e47bfd5cd3c103df28, type: 3}
   Price: 150

@@ -506,6 +506,12 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe">
       <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\PackageCache\com.unity.collections@12999e356c23\Unity.Collections.Tests\System.Runtime.CompilerServices.Unsafe\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Android.Types">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.3.13f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Android.Gradle">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.3.13f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
+    </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.3.13f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
     </Reference>
@@ -902,11 +908,11 @@
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
       <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.AI.Navigation.Updater">
-      <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.AI.Navigation.Updater">
+      <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll</HintPath>
     </Reference>
     <Reference Include="Unity.AI.Navigation.Editor">
       <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll</HintPath>
@@ -956,6 +962,9 @@
     <Reference Include="Unity.VisualScripting.Flow">
       <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ProBuilder.Editor">
+      <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\ScriptAssemblies\Unity.ProBuilder.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -971,14 +980,17 @@
     <Reference Include="Unity.InputSystem.ForUI">
       <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.GPUDriven.Runtime">
-      <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\ScriptAssemblies\Unity.RenderPipelines.GPUDriven.Runtime.dll</HintPath>
+    <Reference Include="Unity.ProBuilder.AddOns.Editor">
+      <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
       <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.GPUDriven.Runtime">
+      <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\ScriptAssemblies\Unity.RenderPipelines.GPUDriven.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
@@ -1004,8 +1016,14 @@
     <Reference Include="Unity.Multiplayer.Center.Editor">
       <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\ScriptAssemblies\Unity.Multiplayer.Center.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+      <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
       <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder">
+      <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\ScriptAssemblies\Unity.ProBuilder.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
@@ -1027,6 +1045,9 @@
     </Reference>
     <Reference Include="Unity.InputSystem">
       <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Settings.Editor">
+      <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\ScriptAssemblies\Unity.Settings.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:\Untericht\PRG\HalbJahr2\Unity\TowerFlame\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
